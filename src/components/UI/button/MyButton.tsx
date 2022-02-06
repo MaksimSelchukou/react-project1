@@ -2,13 +2,20 @@ import React from 'react';
 import styles from './MyButton.module.css';
 
 type myButtonType = {
-    children:string
-    disabled:boolean
+    children: string
+    // disabled:boolean
+    // title: string
+    newPost: () => void
 }
 
-export const MyButton = (props: myButtonType) => {
+export const MyButton = ({...props}: myButtonType) => {
+
+    const addNewPost = () => {
+        props.newPost()
+    }
+
     return (
-            <button {...props} className={styles.myBtn}>{props.children}</button>
+        <button onClick={addNewPost} className={styles.myBtn}>{props.children}</button>
     );
 };
 
