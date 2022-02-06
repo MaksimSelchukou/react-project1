@@ -1,0 +1,1 @@
+declare module "*.module.css" // e.g declare module 'react-leaflet'
